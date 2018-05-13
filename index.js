@@ -2,8 +2,8 @@
 let app = require('express')()
 let http = require('http').Server(app)
 let io = require('socket.io')(http, {origins: '*'})
-
-http.listen(5000, () => console.log('started on port 5000'))
+const PORT = process.env.PORT || 5000
+http.listen(PORT, () => console.log('started on port %s', PORT))
 
 // TODO - keep them in the db
 let state = []
