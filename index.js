@@ -1,7 +1,7 @@
 // @ts-check
 let app = require('express')()
 let http = require('http').Server(app)
-let io = require('socket.io')(http, {origins: '*'})
+let io = require('socket.io')(http, {origins: '*:*'})
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   next();
